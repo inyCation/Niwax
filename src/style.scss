@@ -1,44 +1,50 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-li{
+li {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-@mixin inputRemoveDefault(){
+@mixin inputRemoveDefault() {
     background: none;
     outline: none;
     border: none;
 }
 
-@mixin buttonEffect(){
-    >.circle{
+body{
+    background-color: #4242dc;
+
+}
+
+@mixin buttonEffect() {
+    >.circle {
         width: 10rem;
         height: 10rem;
         background-color: rgba(252, 253, 253, 0.328);
         border-radius: 10rem;
-        
+
         position: absolute;
         right: -120px;
         top: -15px;
 
-        
+
 
         transition: all ease-in-out .5s;
 
     }
-    &:hover > .circle{
+
+    &:hover>.circle {
         transition: all ease-in-out .5s;
         right: -80px;
         top: -10px;
-    }   
+    }
 }
 
 
@@ -46,18 +52,18 @@ a{
 
 
 
-.popUpContainer{
+.popUpContainer {
     background-color: #4242dc;
     width: 100vw;
     height: 100vh;
     display: none;
 }
 
-.popUpWithForm{
+.popUpWithForm {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
+
     background-color: #efefef;
 
     width: 50%;
@@ -66,45 +72,60 @@ a{
     left: 25%;
     top: 15%;
 
-    >.form{
+    >.form {
         display: flex;
         flex-direction: column;
         gap: .5rem;
         padding: 2rem;
-        >.title{
+
+        >.title {
             font-size: 2.5rem;
             font-weight: 700;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
             margin-bottom: 0rem;
         }
-        >.desc{
+
+        >.desc {
             margin-bottom: 2rem;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 1rem;
             color: #6a6a8e;
         }
-        >form{
-            div{
+
+        >form {
+            div {
                 position: relative;
-                >label{
+
+                >label {
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                     position: absolute;
                     top: .7rem;
                     left: 1rem;
-                transition: all ease-in-out .2s;
+                    transition: all ease-in-out .2s;
+                    color: #6a6a8e;
+
                     
 
                 }
-                input:focus + label{
-                transition: all ease-in-out .2s;
-                    
+
+                input:focus+label {
+                    transition: all ease-in-out .2s;
+
                     font-size: .8rem;
                     top: -.3rem;
                     left: .7rem;
                 }
+
+                input:focus {
+                    border-bottom: 2px solid rgb(192, 19, 151);
+
+                }
             }
+
             margin-bottom: 2.5rem;
-            input{
+
+            input {
                 margin-bottom: .5rem;
                 padding: .3rem;
                 font-size: 1.2rem;
@@ -115,27 +136,36 @@ a{
                 border-bottom: 2px solid rgb(209, 209, 209);
                 transition: all ease-in-out .5s;
 
-                &:hover{
+                &:hover {
                     transition: all ease-in-out .5s;
                     border-bottom: 2px solid rgb(192, 19, 151);
 
                 }
-            }   
-            button{
+            }
+
+            button {
                 @include inputRemoveDefault();
                 margin-top: 1rem;
                 width: 90%;
                 height: 3rem;
                 color: #efefef;
                 border-radius: 2rem;
-                background-color: rgb(211, 40, 171);
+
+                font-size: 1.2rem;
+
+                background: linear-gradient(to right, rgb(230, 160, 47) 10%, rgba(255,0,243,1) 100%);             
                 position: relative;
-                overflow: hidden;                
+                overflow: hidden;
 
-                @include buttonEffect();             
+                @include buttonEffect();
 
-            } 
-            .privacyDesc{
+                &:hover {
+                    cursor: pointer;
+                }
+
+            }
+
+            .privacyDesc {
                 font-size: .8rem;
                 margin-left: 2rem;
                 margin-top: .8rem;
@@ -145,23 +175,26 @@ a{
         }
 
     }
-    >.img{
+
+    >.img {
         width: 79%;
         height: 70vh;
-        background: url("./assets/mockup-app.jpg") ;
+        background: url("./assets/mockup-app.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-clip: content-box;
         background-size: cover;
     }
-    >.closeBtn{
+
+    >.closeBtn {
         position: absolute;
         top: 2rem;
         right: 2rem;
 
 
         font-size: 2rem;
-        &:hover{
+
+        &:hover {
             cursor: pointer;
         }
     }
@@ -170,7 +203,7 @@ a{
 
 
 
-nav{
+nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -179,24 +212,28 @@ nav{
     height: 3.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-    position: fixed;
+    position:fixed;
     background-color: #e5e5e536;
     z-index: 10;
-    
-    menu{
+
+    top: 0rem;
+    left: 0;
+
+    menu {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
 
         width: 40%;
-        li{
+
+        li {
             height: 100%;
             font-size: 1.2rem;
             color: #f1f1f1;
 
             margin-top: 1rem;
 
-            &::after{
+            &::after {
                 content: "";
                 display: flex;
                 margin-top: 1rem;
@@ -205,48 +242,53 @@ nav{
                 height: 4px;
                 transition: all ease-in-out .5s;
             }
-            &:hover{
+
+            &:hover {
                 cursor: pointer;
-                &::after{
+
+                &::after {
                     transform-origin: left;
-                    width: 100%;         
+                    width: 100%;
                 }
             }
         }
     }
-    .requestAQuote{
+
+    .requestAQuote {
+        @include buttonEffect();
+
         position: relative;
         overflow: hidden;
         background-color: #4242dc;
-        
+
         display: flex;
         align-items: center;
 
-        @include buttonEffect();
 
         padding: .5rem 1rem;
         border-radius: 3rem;
         height: 2.7rem;
         width: 10rem;
 
-        color: hsl(0, 0%, 89%);
+        color: hsl(0, 0%, 85%);
 
     }
-    .toggler{
+
+    .toggler {
         width: 2rem;
         height: 2rem;
-        line-height: 2rem;
+        line-height: 2.2rem;
         text-align: center;
 
 
         background-color: #dece53;
-        border: 2px solid rgb(35, 35, 35);
-        box-sizing: border-box;
+        border: 3px solid rgb(236, 236, 236);
+        box-sizing: content-box;
 
         border-radius: 2rem;
         transition: all ease-in-out .5s;
 
-        &:hover{
+        &:hover {
             transition: all ease-in-out .5s;
 
             cursor: pointer;
@@ -257,10 +299,10 @@ nav{
 
 }
 
-.sideImageSlider{
+.sideImageSlider {
     z-index: 100;
 
-    background-color: #f1f1f1;
+    background-color: #f3f3f3;
     position: absolute;
     right: 0;
     top: 0;
@@ -269,25 +311,145 @@ nav{
     width: 30vw;
     height: 100vh;
 
-    >h3{
-        font-size: 2.5rem;
+    >h3 {
+        font-size: 1.5rem;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     }
-    >form{
-        input,select{
-            color: #7e7c7c;
-            margin: 0 .6rem;
-            @include inputRemoveDefault();
-            width: 90%;
-            padding: 1.2rem .3rem;
-            height: 2.4rem;
-            border-radius: 2px ;
-            border: 2px solid #e9e9e9;
-        }
-        option{
-            color: #4f4f4f;
+
+    >form {
+        color: #565656;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+
+        gap: .9rem;
+
+        input:first-child {
+            margin-top: 1rem;
         }
 
+        input {
+            @include inputRemoveDefault();
+
+            width: 90%;
+            padding: 1.2rem .7rem;
+            height: 2.4rem;
+            border-radius: .3rem;
+            border: 2px solid #e9e9e9;
+            transition: all ease-in-out .5s;
+
+            &:hover {
+                transition: all ease-in-out .5s;
+                border-bottom: 2px solid rgb(192, 19, 151);
+
+            }
+        }
+
+        select {
+            @include inputRemoveDefault();
+            width: 90%;
+            padding: 0.8rem .3rem;
+            border-radius: .3rem;
+
+            border: 2px solid #e9e9e9;
+        }
+        textarea{
+            @include inputRemoveDefault();
+            resize: vertical;
+            background: none;
+           
+           
+            width: 90%;
+
+            padding: .6rem .7rem;
+            // height: 9rem;
+
+
+            border-radius: .3rem;
+            border: 2px solid #e9e9e9;
+
+        }
+        .submitBtn{
+            @include inputRemoveDefault();
+            margin-top: 1rem;
+            width: 90%;
+            height: 3rem;
+            color: #ebebeb;
+            border-radius: 2rem;
+            
+            font-size: 1.2rem;
+
+            background: linear-gradient(to right, rgb(230, 160, 47) 10%, rgba(255,0,243,1) 100%);             
+            position: relative;
+            overflow: hidden;
+            transition: all ease-in-out .7s;
+
+            @include buttonEffect();
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .closeBtn {
+
+        background-color: #e9e9e9;
+
+        font-size: 2rem;
+        height: 2rem;
+        border-radius: 2rem;
+        position: absolute;
+        top: 3rem;
+        left: -1rem;
+    }
+}
+
+
+.homeCards{
+    width: 12rem;
+    height: 18rem;
+    border-radius: 1.4rem;
+
+    >img{
+        width: 100%;
+        height: auto;
+        
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-clip: border-box;
+        
+        display: grid;
+        place-items: center;
+
+        overflow: hidden;
+    }
+    .desc{
+        color: #fff;
+        font-size: 2.3rem;
+        font-weight: 700;
+        width: 1rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+}
+
+
+.landingPage{
+    // background: #242cd1;
+    // margin-top: 2rem;
+    >.leftDetails{
+        color: #f3f3f3;
+        >.menu{
+            margin-top: 7.5rem;
+            font-size:2.9rem;
+            font-weight: 800;
+            font-family:  poppins;
+        }
+        >.desc{
+
+        }
     }
 }

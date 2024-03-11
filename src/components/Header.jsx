@@ -1,16 +1,19 @@
-import React,{useRef,useState} from 'react'
+import React,{useRef,useState,useContext} from 'react'
 import {FaMoon,FaSun} from "react-icons/fa"
 import logo from "../assets/white-logo.png"
 import SideSlider from './SideSlider'
 
 
-const Header = () => {
+import { SideSliderContext } from '../context/SideSliderContext';
 
-  const [sideSlider, setSideSlider] = useState(false);
+
+const Header = () => {
   const requestAQuote = useRef();
 
+  const {sideSliderStatus,setSideSliderStatus} = useContext(SideSliderContext);
+
   const handleRequestAQuote = () =>{
-    setSideSlider(prev => !prev);
+    setSideSliderStatus(prev => !prev);
   }
 
 
@@ -37,7 +40,7 @@ const Header = () => {
         </div>
       </nav>
       {
-        sideSlider ? ( <SideSlider /> ) : ("")
+        sideSliderStatus ? ( <SideSlider /> ) : ("")
       }
     </>
   )

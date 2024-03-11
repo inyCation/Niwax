@@ -4,14 +4,19 @@ import {AiOutlineCloseCircle} from "react-icons/ai"
 const PopUpWithForm = () => {
   const popup = useRef();
 
-  const handleClose = () => {
+  const handleOn = () => {
     popup.current.style.display = "block";
+
+  };
+  const handleClose = () => {
+    popup.current.style.display = "none";
+
   };
 
 
   useEffect(() =>{
     setTimeout(
-      handleClose
+      handleOn
     ,2000)
   },[])
 
