@@ -2,6 +2,7 @@ import React,{useRef,useContext} from 'react';
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 
 import { SideSliderContext } from '../context/SideSliderContext';
+import { MailLogo, MapLogo, CallLogo, WhatsappLogo } from '../assets/SideSliderAssets';
 
 
 
@@ -35,7 +36,46 @@ const SideSlider = () => {
                 <button className='submitBtn' type="submit">Submit
                 <div className="circle"></div>
                 </button>
+
+                <div className="getInTouch">
+                  <div className="title">Get In Touch</div>
+                  <div className="desc">
+                  Please fill out the form below if you have a plan or project in mind that you'd like to share with us.
+                  </div>
+                  <div className="getMethod">
+                    <div className="call">
+                      <img src={CallLogo} alt="" srcset="" />
+                      <div className="details">
+                        <h4>+91-0987654321</h4>
+                        <p>Mon-Fri 9am - 6pm</p>
+                      </div>
+                    </div>
+                    <div className="whatsapp">
+                      <img src={WhatsappLogo} alt="" srcset="" />
+                      <div className="details">
+                        <h4>+91-1234567890</h4>
+                        <p>Mon-Fri 9am - 6pm</p>
+                      </div>
+                    </div>
+                    <div className="mail">
+                      <img src={MailLogo} alt="" srcset="" />
+                      <div className="details">
+                        <h4>[email protected]</h4>
+                        <p>Online Support</p>
+                      </div>
+                    </div>
+                    <div className="map">
+                      <img src={MapLogo} alt="" srcset="" />
+                      <div className="details">
+                        <h4>Jaipur, Rajasthan, India</h4>
+                        <p>Visit Our Office</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </form>
+
 
             <div className="closeBtn" onClick={handleClose}>
               <AiOutlineCloseCircle />
