@@ -1,0 +1,29 @@
+@mixin inputRemoveDefault() {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+@mixin buttonEffect() {
+    >.circle {
+        width: 10rem;
+        height: 10rem;
+        background-color: rgba(252, 253, 253, 0.328);
+        border-radius: 10rem;
+
+        position: absolute;
+        right: -120px;
+        top: -15px;
+
+
+
+        transition: all ease-in-out .5s;
+
+    }
+
+    &:hover>.circle {
+        transition: all ease-in-out .5s;
+        right: -80px;
+        top: -10px;
+    }
+}

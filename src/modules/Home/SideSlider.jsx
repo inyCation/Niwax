@@ -1,8 +1,8 @@
 import React,{useRef,useContext} from 'react';
 import {AiOutlineCloseCircle} from 'react-icons/ai'
 
-import { SideSliderContext } from '../context/SideSliderContext';
-import { MailLogo, MapLogo, CallLogo, WhatsappLogo } from '../assets/SideSliderAssets';
+import { SideSliderContext } from '../../context/SideSliderContext';
+import { MailLogo, MapLogo, CallLogo, WhatsappLogo } from '../../assets/SideSliderAssets';
 
 
 

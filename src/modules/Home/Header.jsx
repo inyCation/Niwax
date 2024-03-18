@@ -1,10 +1,10 @@
 import React,{useRef,useState,useContext} from 'react'
 import {FaMoon,FaSun} from "react-icons/fa"
-import logo from "../assets/white-logo.png"
+import logo from "../../assets/white-logo.png"
 import SideSlider from './SideSlider'
 
 
-import { SideSliderContext } from '../context/SideSliderContext';
+import { SideSliderContext } from '../../context/SideSliderContext';
 
 
 const Header = () => {
